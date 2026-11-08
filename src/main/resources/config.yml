@@ -1,0 +1,134 @@
+# ===== DailyChallenge =====
+
+# Strefa czasowa, wedlug ktorej liczone sa godziny 10:00-24:00
+timezone: "Europe/Warsaw"
+
+# Ile challengy dziennie i w jakim przedziale godzin (losowe godziny)
+challenges-per-day: 5
+start-time: "10:00"
+end-time: "23:59"
+# Minimalna przerwa miedzy challengami (w minutach)
+min-gap-minutes: 30
+
+# Challenge sie nie odpali, jesli jest mniej graczy niz tyle
+min-players: 1
+
+# Po ilu sekundach challenge wygasa, jesli nikt nie wygra
+timeout-seconds: 300
+
+# Nagroda losowana z przedzialu (wyplata przez Vault)
+reward:
+  min: 100
+  max: 300
+
+# Czy gracze w trybie creative moga wygrywac (blok/kill)
+allow-creative: false
+
+# Czy pokazywac tez duzy tytul na ekranie
+show-title: true
+
+# Czy wielkosc liter ma znaczenie przy przepisywaniu
+case-sensitive: false
+
+# Wlaczone typy: TYPE (przepisz), MATH (policz), SCRAMBLE (ulozone slowo),
+# PLACE (postaw blok), BREAK (wykop blok), KILL (zabij moba)
+enabled-types:
+  - TYPE
+  - MATH
+  - SCRAMBLE
+  - PLACE
+  - BREAK
+  - KILL
+
+# Znaki uzywane w losowym kodzie do przepisania
+type-chars: "abcdefghjkmnpqrstuvwxyz23456789"
+type-length: 8
+
+# Slowa do typu SCRAMBLE
+words:
+  - diament
+  - zelazo
+  - kilof
+  - creeper
+  - spawner
+  - enderman
+  - obsydian
+  - netherite
+  - kowadlo
+  - zaczarowanie
+  - wioska
+  - portal
+  - mieszkaniec
+  - nagroda
+  - serwer
+  - przygoda
+
+# Bloki do postawienia (nazwy Material z Bukkit)
+place-blocks:
+  - COBBLESTONE
+  - OAK_PLANKS
+  - GLASS
+  - TORCH
+  - DIRT
+  - SAND
+  - BRICKS
+  - WHITE_WOOL
+  - CRAFTING_TABLE
+  - FURNACE
+  - CHEST
+  - LADDER
+
+# Bloki do wykopania
+break-blocks:
+  - STONE
+  - DIRT
+  - SAND
+  - GRAVEL
+  - OAK_LOG
+  - COAL_ORE
+  - IRON_ORE
+  - COPPER_ORE
+  - CLAY
+  - NETHERRACK
+
+# Moby do zabicia (nazwy EntityType)
+kill-mobs:
+  - ZOMBIE
+  - SKELETON
+  - CREEPER
+  - SPIDER
+  - COW
+  - SHEEP
+  - PIG
+  - CHICKEN
+
+# ===== Wiadomosci (kody kolorow &) =====
+# Placeholdery: {description} {min} {max} {time} {player} {reward} {target}
+messages:
+  prefix: "&6&l[CHALLENGE] &r"
+  broadcast:
+    - "&8&m                                                  "
+    - "&6&l★ CODZIENNY CHALLENGE ★"
+    - " "
+    - "{description}"
+    - " "
+    - "&7Nagroda: &a{min}$ - {max}$ &8| &7Czas: &e{time}"
+    - "&8&m                                                  "
+  title: "&6&lCODZIENNY CHALLENGE"
+  types:
+    TYPE: "&fKto pierwszy przepisze na chacie: {target}"
+    MATH: "&fKto pierwszy poda wynik: {target}"
+    SCRAMBLE: "&fKto pierwszy ulozy slowo: {target}"
+    PLACE: "&fKto pierwszy postawi blok: {target}"
+    BREAK: "&fKto pierwszy wykopie blok: {target}"
+    KILL: "&fKto pierwszy zabije: {target}"
+  winner:
+    - "&8&m                                                  "
+    - "&6&l★ CHALLENGE ZAKONCZONY ★"
+    - "&e{player} &7wygrywa i dostaje &a{reward}$&7!"
+    - "&8&m                                                  "
+  timeout: "&cNikt nie wygral challengu. Do nastepnego razu!"
+  no-active: "&7Aktualnie nie trwa zaden challenge."
+  active: "&7Trwa challenge: "
+  no-permission: "&cNie masz uprawnien."
+  no-economy: "&cBrak ekonomii (Vault) - nagroda nie zostala wyplacona!"

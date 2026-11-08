@@ -1,0 +1,17 @@
+name: DailyChallenge
+version: '1.0.0'
+main: pl.dailychallenge.DailyChallengePlugin
+api-version: '1.21'
+description: Codzienne losowe challenge na chacie z nagrodami w kasie
+depend: [Vault]
+
+commands:
+  challenge:
+    description: Komendy Daily Challenge
+    usage: /challenge [info|start|stop|schedule|reload]
+    aliases: [dc, daily]
+
+permissions:
+  dailychallenge.admin:
+    description: Zarzadzanie challengami
+    default: op
